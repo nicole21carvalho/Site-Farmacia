@@ -1,0 +1,31 @@
+// Exemplo simples para listar produtos
+const produtos = [
+    { id: 1, nome: 'Paracetamol', descricao: 'Analgésico e antipirético', preco: 5.5 },
+    { id: 2, nome: 'Dipirona', descricao: 'Analgésico e antipirético', preco: 4.0 },
+    { id: 3, nome: 'Amoxicilina', descricao: 'Antibiótico', preco: 15.0 }
+];
+
+function carregarProdutos() {
+    const lista = document.getElementById('lista-produtos');
+    lista.innerHTML = '';
+    produtos.forEach(produto => {
+        const div = document.createElement('div');
+        div.className = 'produto';
+        div.innerHTML = `
+            <h3>${produto.nome}</h3>
+            <p>${produto.descricao}</p>
+            <p>Preço: R$ ${produto.preco.toFixed(2)}</p>
+        `;
+        lista.appendChild(div);
+    });
+}
+
+window.onload = () => {
+    carregarProdutos();
+
+    document.getElementById('form-contato').addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Mensagem enviada! Obrigado pelo contato.');
+        e.target.reset();
+    });
+};
