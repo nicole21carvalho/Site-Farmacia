@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+header { background: #4CAF50; color: white; padding: 1rem; text-align: center; }
+main { display: flex; padding: 1rem; }
+#produtos { flex: 2; }
+.produto { border: 1px solid #ddd; padding: 1rem; margin: 0.5rem; }
+#carrinho { flex: 1; border-left: 1px solid #ddd; padding-left: 1rem; }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Farmácia Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Bem-vindo à Farmácia Online</h1>
+    <input type="text" id="busca" placeholder="Buscar produto...">
+    <button onclick="buscarProdutos()">Buscar</button>
+</header>
+<main>
+    <div id="produtos"></div>
+    <div id="carrinho">
+        <h2>Carrinho</h2>
+        <ul id="itens-carrinho"></ul>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

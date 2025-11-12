@@ -1,0 +1,40 @@
+package dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import model.Produto;
+
+public class ProdutoDAO {
+    private static List<Produto> produtos = new ArrayList<>();
+
+    static {
+        produtos.add(new Produto(1, "Paracetamol", "Analgésico e antipirético", 5.5));
+        produtos.add(new Produto(2, "Dipirona", "Analgésico e antipirético", 4.0));
+        produtos.add(new Produto(3, "Amoxicilina", "Antibiótico", 15.0));
+    }
+
+    public List<Produto> listarTodos() {
+        return produtos;
+    }
+
+    public Produto buscarPorId(int id) {
+        return produtos.stream().filter(p -> p.getId() == id).findFirst().orElse(null);
+    }
+
+    public void adicionar(Produto produto) {
+        produtos.add(produto);
+    }
+
+    public void atualizar(Produto produto) {
+        Produto p = buscarPorId(produto.getId());
+        if (p != null) {
+            p.setNome(produto.getNome());
+            p.setDescricao(produto.getDescricao());
+            p.setPreco(produto.getPreco());
+        }
+    }
+
+    public void remover(int id) {
+        produtos.removeIf(p -> p.getId() == id);
+    }
+}
